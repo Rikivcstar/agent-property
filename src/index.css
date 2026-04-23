@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    /* Luxury Dark Background: Deep Espresso / Slate */
+    @apply bg-[#11100f] text-[#ebe7e0] font-sans antialiased overflow-x-hidden;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    @apply tracking-wide;
+  }
+
+  /* Custom scrollbar for webkit */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #11100f; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #39332e; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37; 
+  }
+}
+
+/* Premium utility classes */
+@layer utilities {
+  .text-gold {
+    @apply text-[#D4AF37];
+  }
+  .bg-gold {
+    @apply bg-[#D4AF37];
+  }
+  .border-gold {
+    @apply border-[#D4AF37];
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #e6ce8a 0%, #D4AF37 50%, #b8932c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #e6ce8a 0%, #D4AF37 50%, #b8932c 100%);
+  }
+
+  .glass-panel {
+    background: rgba(26, 24, 22, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.5s ease;
+  }
+  .glass-panel-hover:hover {
+    background: rgba(43, 38, 35, 0.6);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.1);
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
